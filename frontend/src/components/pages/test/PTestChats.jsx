@@ -1,3 +1,7 @@
+/** @jsxImportSource @emotion/react */
+import {css}  from '@emotion/react'
+// import {mediaPC, mediaSP} from '../../../../constants/breakpoint'
+
 import {useState, useEffect} from 'react'
 
 // フロントで持つページ用データ
@@ -6,7 +10,7 @@ const pages = {
 }
 
 // Chatを一覧形式で返すコンポーネント
-export default function PageTestChats(props) {
+function PTestChats(props) {
   const {text} = pages[props.page]
   const socketServerUrl = 'ws://localhost:8080'
 
@@ -43,17 +47,41 @@ export default function PageTestChats(props) {
   }
 
   return (
-    <>
+    <div css={styleRoot}>
       <h1>{text}</h1>
       <input type="text" value={input} onChange={onChangeInput} placeholder='new message'/>
       <button type='button' onClick={onClickButton}>Send</button>
       <ul>
         {chats.map(({id, text}) =>
-          <li key={id}>
+          <li key={id} css={styleItem}>
             <span>{text}</span>
           </li>
         )}
       </ul>
-    </>
+    </div>
   )
 }
+
+const styleRoot = css`
+  * {
+    margin-top: 1em;
+  }
+`
+const styleItem = css`
+  position: relative;
+  padding-left: 1.2em;
+  &:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0.4em;
+    transform: translateY(-50%);
+    background-color: white;
+    width: 0.4em;
+    height: 0.4em;
+    border-radius: 50%;
+  }
+`
+
+export default PTestChats

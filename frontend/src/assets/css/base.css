@@ -1,0 +1,12 @@
+:root {
+  --color-white: #f8f8f8;
+  --color-black: #1b1d21;
+  --color-base: var(--color-white);
+  --color-bg-base: var(--color-black);
+  --color-bg-base-hover: #242528;
+}
+
+body {
+  color: var(--color-base);
+  background-color: var(--color-bg-base);
+}
