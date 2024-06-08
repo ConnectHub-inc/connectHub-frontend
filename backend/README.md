@@ -1,4 +1,5 @@
 frontend動作確認用のbackend。
+公開するものではない。
 
 # 開発環境セットアップ手順
 1. npm install
