@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 // import {css}  from '@emotion/react'
 
-import TSideNav from "./TSideNav"
+import TSideNav from "./sideNav/TSideNav"
 import TContents from "./TContents"
 
 export default function LDefault(props) {
