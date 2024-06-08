@@ -1,13 +1,16 @@
 /** @jsxImportSource @emotion/react */
 // import {css}  from '@emotion/react'
 
-import TNav from "./TNav"
+import TSideNav from "./TSideNav"
+import TContents from "./TContents"
 
 export default function LDefault(props) {
   return (
-    <div>
-      <TNav />
-      {props.children}
+    <div className='l-default'>
+      <TSideNav />
+      <TContents>
+        {props.children}
+      </TContents>
     </div>
   )
 }
