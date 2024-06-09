@@ -21,9 +21,8 @@ endif
 	tar -xf $(BIN)/node.tar.xz -C $(BIN)
 	rm $(BIN)/node.tar.xz
 	ln -sf $(NODE_DIR)/bin/node $(BIN)/node
-	ln -sf $(NODE_DIR)/bin/npm $(BIN)/npm
-	# Update npm to the specified version
-	$(BIN)/npm install -g npm@$(NPM_VERSION)
+	# Install specified version of npm
+	$(NODE_DIR)/bin/npm install -g npm@$(NPM_VERSION) --prefix $(NODE_DIR)
 	ln -sf $(NODE_DIR)/lib/node_modules/npm/bin/npm-cli.js $(BIN)/npm
 
 # Ensure the correct versions of Node.js and npm are used
@@ -40,8 +39,12 @@ check-versions: $(NODE_BIN)
 	  exit 1; \
 	fi
 
+.PHONY: install-deps
+install-deps: $(NODE_BIN)
+	PATH=$(BIN):$$PATH npm install
+
 .PHONY: start
-start: check-versions
+start: check-versions install-deps
 	PATH=$(BIN):$$PATH npm run start
 
 .PHONY: build
