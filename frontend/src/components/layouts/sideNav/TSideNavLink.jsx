@@ -2,7 +2,7 @@
 import {css}  from '@emotion/react'
 import {Link} from 'react-router-dom';
 
-import CIconTalk from '../../parts/chat/icon/CIconTalk';
+import CIconTalk from '../../parts/icon/CIconTalk';
 
 export default function TSideNavLink(props) {
   return (
@@ -22,28 +22,28 @@ const styleRoot = css`
     position: relative;
     display: block;
     overflow: hidden;
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 0.8rem;
     background-color: rgba(248,248,248,0.5);
     .t-sideNav-link-icon {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 17px;
+      width: 1.7rem;
       transition: transform .2s ease-out;
-    }
-    &:hover {
-      .t-sideNav-link-icon {
-        transform: translate(-50%, -50%) scale(1.3);
-      }
     }
   }
   .t-sideNav-link-text {
-    font-size: 11px;
+    font-size: 1.1rem;
     font-weight: 700;
     text-align: center;
-    margin-top: 4px;
+    margin-top: 0.4rem;
+  }
+  &:hover {
+    .t-sideNav-link-icon {
+      transform: translate(-50%, -50%) scale(1.3);
+    }
   }
 `

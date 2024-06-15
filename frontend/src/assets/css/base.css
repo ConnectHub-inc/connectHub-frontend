@@ -8,6 +8,10 @@
   --color-bg-base-hover: #242528;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Noto Sans JP", sans-serif;;
   color: var(--color-base);

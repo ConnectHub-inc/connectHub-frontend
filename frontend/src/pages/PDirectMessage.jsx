@@ -1,7 +1,12 @@
-import CChatListCard from "../../parts/chat/card/CChatListCard"
+/** @jsxImportSource @emotion/react */
+// import {css}  from '@emotion/react'
+// import {mediaPC, mediaSP} from '../../../../constants/breakpoint'
 
-function PIndexSectionChat() {
-  const list = [
+import LDefault from '../components/layouts/LDefault'
+import PDirectMessageChats from '../components/pages/directMessage/PDirectMessageChats'
+
+export default function PDirectMessage() {
+  const chats = [
     {
       id: 1,
       name: 'Alice',
@@ -17,10 +22,10 @@ function PIndexSectionChat() {
   ]
 
   return (
-    <section>
-      <CChatListCard list={list} />
-    </section>
+    <LDefault>
+      <div className='p-directMessage'>
+        <PDirectMessageChats chats={chats} />
+      </div>
+    </LDefault>
   )
 }
-
-export default PIndexSectionChat
