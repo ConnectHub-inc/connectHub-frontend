@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-
 :root {
   --color-white: #f8f8f8;
-  --color-black: #1b1d21;
+  --color-black: #171B1B;
+  --color-gray: #ababad;
   --color-base: var(--color-white);
   --color-bg-base: var(--color-black);
   --color-bg-base-hover: #242528;
+  --color-bg-base-thin: #1B1D21;
+  --color-border: #797c814d;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -13,7 +18,8 @@ html {
 }
 
 body {
-  font-family: "Noto Sans JP", sans-serif;;
+  overflow: hidden;
+  height: 100vh;
   color: var(--color-base);
   background-color: var(--color-bg-base);
 }

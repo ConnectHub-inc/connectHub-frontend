@@ -22,6 +22,7 @@ const styleRoot = css`
   height: 100vh;
   height: 100svh;
   padding-inline: 17px;
+  background-color: var(--color-bg-base-thin);
   .t-sideNav-listLinkItem {
     margin-top: 16px;
   }
