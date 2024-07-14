@@ -23,3 +23,7 @@ body {
   color: var(--color-base);
   background-color: var(--color-bg-base);
 }
+
+h1 {
+  font-size: 3.2rem;
+}
